@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import {EventEmitter} from '@angular/core';
 import { Statistique } from '../modeles/statistique';
 
 @Component({
@@ -8,10 +9,14 @@ import { Statistique } from '../modeles/statistique';
 })
 export class OneStatComponent implements OnInit {
 @Input() stats!:Statistique
-
-  constructor() { }
+@Output() demandeSupp: EventEmitter<any>;
+  constructor() { 
+    this.demandeSupp = new EventEmitter();
+  }
 
   ngOnInit(): void {
   }
-
+  boutonActionner(){
+    this.demandeSupp.emit();
+  }
 }

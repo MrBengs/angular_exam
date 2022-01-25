@@ -11,4 +11,11 @@ export class AppComponent {
   tekken:Statistique = new Statistique("number2", "tekken7", "8P");
   mario:Statistique = new Statistique("number3", "mario kart", "16P");
   tabStats: Array<Statistique> = [this.pokemon, this.tekken, this.mario];
+
+  suppStats(statASupp: Statistique) {
+    let position = this.tabStats.indexOf(statASupp);
+    if (position != -1) {
+      this.tabStats.splice(position, 1)
+    }
+  }
 }
