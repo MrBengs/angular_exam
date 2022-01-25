@@ -1,5 +1,3 @@
-<ul>
-  <li *ngFor="let i of tabStats">{{i.title}}</li>
-</ul>
+<app-one-stat *ngFor="let stat of tabStats" [stats]="stat"></app-one-stat>
 
 <router-outlet></router-outlet>
