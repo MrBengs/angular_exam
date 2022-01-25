@@ -7,7 +7,8 @@ import { Statistique } from './modeles/statistique';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    tabStats:Array<Statistique> = [new Statistique ("number1","pokemon rouge","151"),
-                                   new Statistique ("number2","tekken7","8P")];
+  pokemon:Statistique = new Statistique("number1", "pokemon rouge", "151");
+  tekken:Statistique = new Statistique("number2", "tekken7", "8P");
+  mario:Statistique = new Statistique("number3", "mario kart", "16P");
+  tabStats: Array<Statistique> = [this.pokemon, this.tekken, this.mario];
 }
-
